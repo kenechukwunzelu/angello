@@ -55,7 +55,7 @@ CACHES = {"default": django_cache_url.config()}
 
 DATABASES = {
     "default": dj_database_url.config(
-        default="postgres://postgres:ShadowK26@localhost:5432/angellodb", conn_max_age=600
+        default="postgres://saleor:saleor@localhost:5432/angellodb", conn_max_age=600
     )
 }
 
@@ -354,8 +354,10 @@ AUTH_PASSWORD_VALIDATORS = [
     }
 ]
 
-DEFAULT_COUNTRY = os.environ.get("DEFAULT_COUNTRY", "US")
-DEFAULT_CURRENCY = os.environ.get("DEFAULT_CURRENCY", "USD")
+# COUNTRIES_ONLY = ['NG']
+DEFAULT_COUNTRY = os.environ.get("DEFAULT_COUNTRY", "NG")
+DEFAULT_CURRENCY = os.environ.get("DEFAULT_CURRENCY", "₦")
+
 DEFAULT_DECIMAL_PLACES = get_currency_fraction(DEFAULT_CURRENCY)
 DEFAULT_MAX_DIGITS = 12
 DEFAULT_CURRENCY_CODE_LENGTH = 3
